@@ -7,7 +7,7 @@
   library(dplyr)
 
 ## Working directory - location of 'UCI HAR Dataset' directory
-  setwd("C:/Users/Thomas Miebach/datasciencecoursera/Data Cleaning/Week 4/Course Project")
+  ## setwd("C:/Users/Thomas Miebach/datasciencecoursera/Data Cleaning/Week 4/Course Project")
   ## Pre-set your working directory or enter your own path above and un-comment
 
 ##  Read and clean individual data files
