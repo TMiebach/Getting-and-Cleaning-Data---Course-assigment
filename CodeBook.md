@@ -24,7 +24,7 @@ Helpfull information about the original data set can be found in the "features_i
 ## General overview
 * The dataset stored in "data_tidy.txt" contains 180 observation for two variables:  subject_code (30 levels) and activity_code (6 levels). 
 
-* The subject code repsents a numerical value for each of 30 study participants
+* The subject code represents a numerical value for each of 30 study participants
 
 * The activity code represents six activities performed by each subject: LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, and WALKING_UPSTAIRS
 
@@ -44,35 +44,52 @@ These signals were used to estimate variables of the feature vector for each pat
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 tBodyAcc-XYZ
+
 tGravityAcc-XYZ
+
 tBodyAccJerk-XYZ
+
 tBodyGyro-XYZ
+
 tBodyGyroJerk-XYZ
+
 tBodyAccMag
+
 tGravityAccMag
+
 tBodyAccJerkMag
+
 tBodyGyroMag
+
 tBodyGyroJerkMag
+
 fBodyAcc-XYZ
+
 fBodyAccJerk-XYZ
+
 fBodyGyro-XYZ
+
 fBodyAccMag
+
 fBodyAccJerkMag
+
 fBodyGyroMag
+
 fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
 
 mean(): Mean value
+
 std(): Standard deviation
 
 From the total of 10299 observation contained in the original data set, the mean of the data for each combination of subject and activity was calculated and saved in the tidy dataset
 
-## Variable naming
+## Variable Naming
 The variable naming of the original data set was largely preserved with the following notable modifications:
 
 * Features are named as described above, e.g. tBodyAcc is the accelrator signal for the body movement in the temporal domain
 * Function performed on the data are the next part of the data name. The "mean()" and "std()" description used in the orignal data set were translated into "main_fct" and "std_fct" as "(" or ")" are not valid symbols in column names.
 * The last part of the name respresents the coordinate (-X, -Y  or -Z) if applicable
 * Dashes "-" used in the orignal dataset were replace with underscores "_"
-* as an illustrative example, the orignal feature name "tGravityAcc-mean()-X" was converted to "tGravityAcc_mean_fct_X"
+* As an illustrative example, the orignal feature name "tGravityAcc-mean()-X" was converts to "tGravityAcc_mean_fct_X"
