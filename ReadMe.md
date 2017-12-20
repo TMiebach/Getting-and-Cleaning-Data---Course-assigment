@@ -39,41 +39,41 @@ This section describes in general the structure of the r code provided in the fi
 
 1. Setup of environment
 
---* The code makes use of the dplyr library, which is loaded at the beginning of the script
+* The code makes use of the dplyr library, which is loaded at the beginning of the script
 
---* The working directory should contain the raw data in the directory "UCI HAR Dataset" as extracted. Alternatively a setwd() command can be included in the r script.
+* The working directory should contain the raw data in the directory "UCI HAR Dataset" as extracted. Alternatively a setwd() command can be included in the r script.
 
 2. Read and combine data into one dataset
 
---1. Informational data files (metadata?) - The text files "activity labels" and "features" are read in using read.table() and assigned to data objects. 
+   1. Informational data files (metadata?) - The text files "activity labels" and "features" are read in using read.table() and assigned to data objects. 
 
---* The activity lables will be used as is to de-code the activity for the observations. 
+* The activity lables will be used as is to de-code the activity for the observations. 
 
---* The features data will be used to name the columns for the observations. It contains characters invalid in columns names ("-", "()" and ",") which will be replaced with ("_", "fct" and "."), respectively. this will, e.g. turn "mean()" or "std()" in the name into "mean_fct" and "std_fct". For additional information on the resulting columns names see the Codebook
+* The features data will be used to name the columns for the observations. It contains characters invalid in columns names ("-", "()" and ",") which will be replaced with ("_", "fct" and "."), respectively. this will, e.g. turn "mean()" or "std()" in the name into "mean_fct" and "std_fct". For additional information on the resulting columns names see the Codebook
 
---2. Training and test data files (X-, Y, and subject-, for each) are read in and assigned to data objects
+   2. Training and test data files (X-, Y, and subject-, for each) are read in and assigned to data objects
 
---3. Training and test data is combined individually first using the cbind() function and then combined using the rbind() function
+   3. Training and test data is combined individually first using the cbind() function and then combined using the rbind() function
 
 3. Extract only measurements on the mean and standard deviation for each measurement   
 
---* Columns meeting these critera were selected using the grep() function matching mean_fct and std_fct
+* Columns meeting these critera were selected using the grep() function matching mean_fct and std_fct
 
---* It was decided not to include any angle variables (e.g. angle(tBodyAccMean,gravity)) as they are calculated from variables that are means, but do not represent mean values calulatd using the mean() function.
+* It was decided not to include any angle variables (e.g. angle(tBodyAccMean,gravity)) as they are calculated from variables that are means, but do not represent mean values calulatd using the mean() function.
 
---* A new data set "data_select" is generated using the selec() function
+* A new data set "data_select" is generated using the selec() function
 
 4. Use descriptive activity names 
 
---* Coded activity data is replaced by actual activity names using the factor() function
+* Coded activity data is replaced by actual activity names using the factor() function
 
 5. Generate tidy data set and write to file
 
---* Using the group_by function the data is grouped by subject and activity
+* Using the group_by function the data is grouped by subject and activity
 
---* The data is summarized generating the mean for each subject/group combination using the summarize_all() function
+* The data is summarized generating the mean for each subject/group combination using the summarize_all() function
 
---* The data is written to a text file "data_tify.txt"" using the write.table() function
+* The data is written to a text file "data_tify.txt"" using the write.table() function
 
 # Codebook
 The codebook describes the variables, the data, and transformations or work performed to clean up the data. It can be found in the file called "CodeBook.md" 
