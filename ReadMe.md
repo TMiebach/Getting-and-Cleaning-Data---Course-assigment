@@ -45,15 +45,15 @@ This section describes in general the structure of the r code provided in the fi
 
 2. Read and combine data into one dataset
 
-  1. Informational data files (metadata?) - The text files "activity labels" and "features" are read in using read.table() and assigned to data objects. 
+   1. Informational data files (metadata?) - The text files "activity labels" and "features" are read in using read.table() and assigned to data objects. 
 
    * The activity lables will be used as is to de-code the activity for the observations. 
 
    * The features data will be used to name the columns for the observations. It contains characters invalid in columns names ("-", "()" and ",") which will be replaced with ("_", "fct" and "."), respectively. this will, e.g. turn "mean()" or "std()" in the name into "mean_fct" and "std_fct". For additional information on the resulting columns names see the Codebook
 
-  2. Training and test data files (X-, Y, and subject-, for each) are read in and assigned to data objects
+   2. Training and test data files (X-, Y, and subject-, for each) are read in and assigned to data objects
 
-  3. Training and test data is combined individually first using the cbind() function and then combined using the rbind() function
+   3. Training and test data is combined individually first using the cbind() function and then combined using the rbind() function
 
 3. Extract only measurements on the mean and standard deviation for each measurement   
 
